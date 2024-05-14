@@ -1,0 +1,19 @@
+#configure Git
+git config --global user.name "your-username"
+git config --global user.email "your-email"
+
+#put the files on local repository or create new files
+#initialize the Git repository
+git init
+
+#add the file in stage area
+git add index.html
+
+#example to add files in stage area
+#git add index.html abc.txt folder-a/file1.txt folder-b/file2.txt
+
+#check the staged files
+
+git status
+
+#
