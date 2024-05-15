@@ -16,4 +16,56 @@ git add index.html
 
 git status
 
-#
+#commit the files
+git commit -m "initial commit"
+
+#now update the few lines and again add and commit
+
+git add index.html
+git commit -m "added few lines"
+
+#check the commit history
+
+git log
+
+#switch to privious commit 
+
+git checkout commit-id 
+
+#example
+git checkout b38d5d01e2aaf77c23cb8b28039fc3e1ee585190
+
+#switch to latest commit
+
+git checkout main
+git log
+
+#undo the commit
+
+git revert commit id
+
+#get the commit id using
+
+git log
+
+#git reset - it will delete all commit id and message.
+
+git reset --hard commit-id #go to that commit with reset all new commit
+
+#suppose you have made three commit and you want to go to first commit and delete all commit history of second and third commit
+
+
+#add remote repository 
+git remote add GIT_URL
+
+
+#########################Key command ##############
+
+git init                 - initialize a Git repository
+git add <file(s)>        - Stage code changes
+git commit -m "..."      - Create a commit for the stage changes
+git status               - Get the current repository status
+git log                  - Output a chronologically order list of commits
+git checkout id          - Temporarily move back to commit <id>
+git revert <id>          - Revert the changes of commit <id>
+git reset <id>           - Undo commit(s) by deleting commits

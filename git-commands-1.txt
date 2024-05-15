@@ -1,0 +1,245 @@
+1. Check git version
+#git --version
+2. Check supported git commands
+#git --help
+3. configure user and email
+#git config --global user.name"anishraut"
+#git config --global user.email "anishraut7836@gmail.com"
+4. configure terminal color
+#git config --global color.ui auto
+5. see other supported command 
+# git config
+6. view the current config
+#git config -l
+7. Initialising Git Repository
+#mkdir learning-git
+#cd learning-git
+#git init .
+** git init required for new project not for existing project.
+** delete the git repo and make it normal folder
+#rm -rf .git
+8. Git add
+#cd learning-git
+# git init .
+# touch index.html index.js manin.css
+#git status
+#git add index.html
+#git status
+** remove file from commited to untracked files
+#git rm --cached index.html
+#git status
+#git add index.html
+#git add index.js
+#git status
+#git add .
+#git status
+*** remove add file from staging area
+#git rm -r --cached .
+#git status
+#git add .
+#git status
+** now reverse one more time
+#git rm -r --cached .
+** create a folder and go inside and create a file
+#mkdir test
+#cd test
+#touch test.js
+#git status
+#ls
+#git add .
+#git status
+** in that case only test.js only will add 
+
+#git add -A
+** add every single file 
+#git status
+#
+
+9. Commit
+#cd ..
+#git commit -m "added project files"
+#git status
+** to check logs
+#git log
+** to check detail logs
+#git show commitid
+#vi index.js
+console.log("hello.git");
+#cat index.js
+#git status
+** to check changes 
+#git diff
+#git add .
+#git status
+#git commit -m "Added console.log"
+#git status
+#git log
+#git show commitid-latest one
+#vi index.js
+delete the lines
+#git diff
+#git status
+**discard the changes
+#git restore index.js
+#git status
+
+10. Amend commit messages
+make the changes in commit message
+#git status
+#vi main.css
+body {
+
+}
+#git status
+#git add .
+#git commit -m "dfdgftgudfh"
+#git log
+#git show commit-id-latest-one
+** make the changes in commit message
+#git commit --amend -m "added body in main.css"
+#git log
+11. Git push
+#push an existing repository from the command line
+git remote add origin https://github.com/anishraut7836/learning-git.git
+  git branch -M main
+  git push -u origin main
+
+12. Add ssh key
+Connecting to GitHub with SSH
+12.1Open Git Bash.
+12.2 Paste the text below, replacing the email used in the example with your GitHub email address.
+#ssh-keygen -t ed25519 -C "anishraut7836@gmail.com"
+
+13. Git push
+#touch main.go
+#git add .
+#git commit -m "added empty file"
+#git push
+
+14. Git pull
+**create a new file on remote repository and pull it on local
+#ls
+#git pull
+#ls
+
+15. Branches
+** see local branch or active branch
+#git branch
+** see remote branch
+#git branch -r
+** see all branches
+#git branch -a
+** create new brach
+#git branch feature-a
+#git branch -a
+** switch branch
+#git checkout feature-a
+** switch to back to privious branch
+#git checkout -
+#git checkout -
+#vi utils.js
+// TODO: implement todo
+#git add .
+#git commit -m "utils.js with todo"
+#git log
+#git checkout main
+#git log
+#git checkout -
+#git push -u origin feature-a
+#git checkout main
+**create branch as well checkout
+#git checkout -b to-delete
+#git branch -a
+#git checkout -
+#git branch -d to-delete
+
+
+16. Merging and pull requests
+#git log --oneline
+#git pull
+#git log --oneline
+#git branch -d feature-a
+
+
+17. Conflicts
+** create a branch and checkout
+#git checkout -b feature-xyz
+#ls
+#cat index.html
+#vi index.html
+add some html code
+#git add index.html
+#git commit -m "added some html"
+#git push
+#git push --set-upstream origin feature-xyz
+** now add some more line through Github repository. edit the index.html file and add few line
+*** now make the changes in index.html locally as well
+#vi index.html
+add some more lines
+#git add .
+#git commit -m "added another p tag"
+#git push
+** error message: 
+! [rejected]
+failed to push some refs to github.com/anishraut7836/learning-git.git
+
+18. Merging Conflicts
+#git pull
+error message:
+CONFLICT (content) : Merge conflict in index.html
+Automatic merge failed: 
+
+#vi index.html
+
+** fix the conflict
+try with vscode and fix the changes
+#git status
+#git add index.html
+#git add .
+#git status
+#git commit -m "resolve conflicts"
+#git push
+#
+
+
+19. Rebase
+there are two branches 
+1- main
+2- feature-xyz
+
+in both branch there is a common file index.html
+in the main branch
+#cat index.html
+added one line by anish
+
+** in the feature-xyz branch
+#cat index.html
+added one line
+second line
+third line
+forth line
+added another line for testing
+fith line
+sixth line
+seventh line
+
+**currently I am working on feature-xyz branch
+now pull the changes from 
+#git pull -r origin main
+it will give the error
+#vi index.html
+fix the error and save
+#git add .
+#git rebase --continue
+if still error then check the index.html file
+#vi index.html
+#git add .
+#git rebase --continue
+#git push
+it will give the error
+so force push
+#git push -f
+
+https://docs.github.com/en/github/writing-on-github/basic-writing-and-formatting-syntax
+
+https://github.com/git-guides/
