@@ -155,3 +155,32 @@ git commit -m "added section"
 #push the code
 
 git push origin feat-section
+#switch to main branch and merge the code local and push to remote repo
+
+git checkout main
+
+git merge feat-section
+
+git push
+
+#delete the repo on local
+git branch -D feat-section
+
+# Pull the code from remote repo to local repo
+
+git Pull
+
+# Git clone
+
+git clone remote-repo-url
+
+git clone https://github.com/anishraut7836/github-action-course.git
+
+#if I define the local directory name then it will clone to that repo
+
+git clone https://github.com/anishraut7836/github-action-course.git  demo-repo
+
+# get the remote  repo link
+git remote
+git remote get-url origin
+
