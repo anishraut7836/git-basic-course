@@ -184,3 +184,12 @@ git clone https://github.com/anishraut7836/github-action-course.git  demo-repo
 git remote
 git remote get-url origin
 
+
+## Add remote repo with username if already started working as git in local but later you push the code
+
+git init
+git add .
+git commit -m "initialize the project"
+git remote add origin https://github_username@github_repo-url
+git push --set-upstream origin main
+git push
