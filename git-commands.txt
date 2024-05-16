@@ -110,3 +110,48 @@ git checkout -b feature-restructure
 
 ##Git branch merge
 
+#add files or modify in new branch and make a commit
+#suppose currently I am working on feature-restructure branch
+
+git add .
+
+git commit -m "updated links"
+
+git log
+
+#switch to main branch
+
+git checkout main
+
+git merge feature-restructure
+
+git log
+
+#Delete the feature branch after merge if not required
+
+git branch -D feature-restructure
+
+##Set remote repo in local repo
+# create a access token on Github account which need during sign in.
+# go to profile setting and developer setting and generate access token
+
+git remote set-url origin https://github-username@repo-url
+
+#example
+git remote set-url origin https://anishraut7836@github.com/anishraut7836/github-action-course.git
+
+git push origin main
+
+#create new branch and push the code into github
+
+git checkout -b feat-sect
+
+#modify files and commit
+
+git add .
+
+git commit -m "added section"
+
+#push the code
+
+git push origin feat-section
